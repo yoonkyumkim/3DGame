@@ -15928,8 +15928,9 @@ GameObject:
   m_Component:
   - component: {fileID: 877657923}
   - component: {fileID: 877657924}
+  - component: {fileID: 877657925}
   m_Layer: 13
-  m_Name: Melee Area
+  m_Name: Boss Melee Area
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15958,11 +15959,26 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877657922}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.46, y: 0.5, z: 3.08}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &877657925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877657922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f646cc79c43de7a4b9fb34dabbbc6011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  isMelee: 1
+  isRock: 0
 --- !u!1 &880802122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7988094277207216310, guid: 83dab506297948d4d8d34c4fe12431ee, type: 3}
@@ -16024,6 +16040,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &880802127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880802122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4d1058456043e41815ec69d84afc03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 3
+  maxHealth: 100
+  curHealth: 100
+  target: {fileID: 9543135}
+  meleeArea: {fileID: 877657924}
+  bullet: {fileID: 5715362280445398750, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
+  isChase: 0
+  isAttack: 0
+  isDead: 0
+  rigid: {fileID: 880802126}
+  boxCollider: {fileID: 880802125}
+  meshs: []
+  nav: {fileID: 0}
+  anim: {fileID: 0}
+  missile: {fileID: 3822090662790620519, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
+  missilePortA: {fileID: 595658499}
+  missilePortB: {fileID: 811258820}
+  isLook: 1
 --- !u!1 &939004984
 GameObject:
   m_ObjectHideFlags: 0
@@ -22329,67 +22375,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3069f8688935af34b98a77e2d63f17db, type: 3}
---- !u!1001 &288813751811338850
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 288813752825529694, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 9543135}
-    - target: {fileID: 3822090662790620519, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_Name
-      value: Missile Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -36.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485897050001031133, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 200ae7ffd1eec90438ff350810ab346f, type: 3}
 --- !u!1001 &435073120743164737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23580,63 +23565,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3aef912d068bd48aa3b151c0674497, type: 3}
---- !u!1001 &4135420689351807883
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -22.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -22.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907475652483814500, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5715362280445398750, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
-      propertyPath: m_Name
-      value: Boss Rock
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6d88002e1aea3154b9eb67866e643c8a, type: 3}
 --- !u!1001 &4728818273312876769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38330,6 +38258,10 @@ PrefabInstance:
     - target: {fileID: 6845652528037215582, guid: b3360abedd97732498f7aea422612232, type: 3}
       propertyPath: m_Name
       value: Enemy C
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845652528037215582, guid: b3360abedd97732498f7aea422612232, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7893469547434590117, guid: b3360abedd97732498f7aea422612232, type: 3}
       propertyPath: m_RootOrder
